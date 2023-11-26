@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "deploy": "npm run build && xmit xmit.dev"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@xmit.co/xmit": "0.2.3-0",
+    "prettier": "^3.1.0"
+  }
+}

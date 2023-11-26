@@ -1,0 +1,23 @@
+---
+layout: layout.html
+---
+
+<h2>Posts</h2>
+<ul>
+  {% for post in collections.post reversed %}
+  <li>
+    <a href="{{ post.url }}"
+      >{{ post.date | dateDisplay }}: {{ post.data.title }}</a
+    >
+  </li>
+  {% endfor %}
+</ul>
+<h2>Resources</h2>
+<ul>
+  <li><a href="https://trello.com/b/5mtTbTW4/xmit">Trello board</a></li>
+  <li><a href="https://discord.gg/EThbKNZDrP">Discord</a></li>
+</ul>
+<h2>Team</h2>
+<ul>
+  <li><a href="https://pcarrier.com">Pierre Carrier</a></li>
+</ul>

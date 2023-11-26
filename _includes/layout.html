@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{{ title | default: "xmit dev team" }}</title>
+    <style>
+      html,
+      body {
+        color: #ccc;
+        background-image: linear-gradient(#333, #222);
+        min-height: 100vh;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        color: #ff0;
+        text-decoration: none;
+      }
+      header,
+      footer {
+        text-align: center;
+        font-style: italic;
+      }
+      h1 {
+        margin: 0;
+        font-size: 200%;
+        font-style: normal;
+      }
+      h1,
+      h2 {
+        color: #fff;
+      }
+      article {
+        max-width: 60em;
+        border-radius: 0.5em;
+        background-color: #181818;
+        margin: 1em auto 1em auto;
+        padding: 1em;
+      }
+      header {
+        background-color: #000;
+      }
+      footer {
+        margin-top: 1em;
+        border-top: 1px solid #000;
+      }
+      pre {
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>{{ title | default: "🧑‍🚀 xmit dev team" }}</h1>
+    </header>
+    <main>{{ content }}</main>
+    <footer>
+      <p>We make <a href="https://xmit.co">xmit.co</a>.</p>
+    </footer>
+  </body>
+</html>
