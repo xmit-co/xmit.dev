@@ -43,11 +43,6 @@ loaded HTML just before a launch, which referred to JS/CSS/assets not included i
 to load them (today, over 5 launches and 10 minutes, such that removing a resource propagates consistently within an
 short window).
 
-## Flexible workflow: upload vs launch, unbounded subdomains
-
-Some use cases prefer launching upon upload, others to promote after internal previews. Any individual or tool might
-launch public previews on subdomains. It should be your workflows over a flexible model.
-
 ## Protocols: HTTP/1.1, HTTP/2, & H3
 
 [HTTP/2](https://en.wikipedia.org/wiki/HTTP/2) was a leap forward. [QUIC](https://en.wikipedia.org/wiki/QUIC) is
