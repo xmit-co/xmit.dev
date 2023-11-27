@@ -91,7 +91,7 @@ Name your page `hello.html` and access it at `/hello`. Simple and practical.
 
 ```toml
 fallback = "index.html" # Single Page Apps
-404 = "404.html" # for custom 404 pages, which do not exist in SPAs
+404 = "404.html" # for custom 404 pages (none in SPAs)
 
 [headers]
 access-control-allow-origin = "*" # add a CORS header
