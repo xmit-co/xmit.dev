@@ -7,21 +7,15 @@ Host static sites. Sounds trivial, right?
 Here are details worth considering, whether you host on your own servers or rely on a platform like the one we're
 building.
 
-## Safe deploys: atomicity & fallthrough
+## Security: full HTTPS, HSTS, headers galore
 
-With atomic launches, it's all or nothing, and within the milliseconds of propagation delays of our coordination
-system ([etcd](https://etcd.io/)). So a client won't see HTML referring to a new JS/CSS/asset until
-it's been made available, avoiding a common source of 404s.
+Securing all traffic is a no-brainer.
 
-To fully avoid 404s, previous launches also need to be excluded slowly: servers need to fall through, so a client which
-loaded HTML just before a launch, which referred to JS/CSS/assets not included in said launch, still gets enough chances
-to load them (today, over 5 launches and 10 minutes, such that removing a resource propagates consistently within an
-short window).
+All HTTP traffic is redirected to HTTPS, and
+include [HSTS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) headers everywhere.
 
-## Pick your own workflow: upload vs launch with unbounded subdomains
-
-Some use cases prefer launching upon upload, others to promote after internal previews. Any individual or tool might
-launch public previews on subdomains. It should be your workflows over a flexible model.
+We go a bit further,
+with `referrer-policy: no-referrer`, `x-frame-options: SAMEORIGIN`, `x-content-type-options: nosniff` out of the box.
 
 ## Admin: 2 clicks to sign in, 1 click to rollback, no delays
 
@@ -32,11 +26,27 @@ milliseconds.
 
 And to make sure wires don't get crossed, the entire admin console is fully reactive.
 
+## Pick your own workflow: upload vs launch with unbounded subdomains
+
+Some use cases prefer launching upon upload, others to promote after internal previews. Any individual or tool might
+launch public previews on subdomains. It should be your workflows over a flexible model.
+
 ## Uploads: only what's changed
 
 `xmit` is smart enough to only upload files that have changed. It's open source (0BSD license), so you can inspect the
 details. In short, it generates a manifest of all file hashes, uploads it only if it's new (checked by hash),
 then uploads only files whose hashes are new.
+
+## Safe launches: atomicity & fallthrough
+
+With atomic launches, it's all or nothing, and within the milliseconds of propagation delays of our coordination
+system ([etcd](https://etcd.io/)). So a client won't see HTML referring to a new JS/CSS/asset until
+it's been made available, avoiding a common source of 404s.
+
+To fully avoid 404s, previous launches also need to be excluded slowly: servers need to fall through, so a client which
+loaded HTML just before a launch, which referred to JS/CSS/assets not included in said launch, still gets enough chances
+to load them (today, over 5 launches and 10 minutes, such that removing a resource propagates consistently within an
+short window).
 
 ## Protocols: HTTP/1.1, HTTP/2, & H3
 
@@ -67,19 +77,9 @@ That's where [`ETag`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/
 
 We always report one, and return `304 Not Modified` if it appears in the `if-none-match` header received from clients.
 
-## Security: full HTTPS, HSTS, headers galore
-
-Securing all traffic is a no-brainer.
-
-All HTTP traffic is redirected to HTTPS, and
-include [HSTS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) headers everywhere.
-
-We go a bit further,
-with `referrer-policy: no-referrer`, `x-frame-options: SAMEORIGIN`, `x-content-type-options: nosniff` out of the box.
-
 ## `www` subdomain
 
-Unless you deploy a site there, we redirect `www` to its parent domain for you.
+Unless you launch a site there, we redirect `www` to its parent domain for you.
 
 ## No need for a subdirectory per page
 
