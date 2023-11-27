@@ -4,7 +4,8 @@ title: The origin story
 
 Host static sites. Sounds trivial, right?
 
-Here are details worth considering, whether you host on your own servers or rely on a platform like the one we're building.
+Here are details worth considering, whether you host on your own servers or rely on a platform like the one we're
+building.
 
 ## Safe deploys: atomicity & fallthrough
 
@@ -14,10 +15,10 @@ it's been made available, avoiding a common source of 404s.
 
 To fully avoid 404s, previous launches also need to be excluded slowly: servers need to fall through, so a client which
 loaded HTML just before a launch, which referred to JS/CSS/assets not included in said launch, still gets enough chances
-to load them (today, over 3 launches and 10 minutes, such that replacing a resource with the fallback page occurs
-consistently within an short window).
+to load them (today, over 5 launches and 10 minutes, such that removing a resource propagates consistently within an
+short window).
 
-## Upload vs launch, unbounded subdomains: your workflow, your URLs, internal previews
+## Pick your own workflow: upload vs launch with unbounded subdomains
 
 Some use cases prefer launching upon upload, others to promote after internal previews. Any individual or tool might
 launch public previews on subdomains. It should be your workflows over a flexible model.
