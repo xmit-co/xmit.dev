@@ -61,15 +61,12 @@ we give it a go on everything, and use the compressed version when requested and
 
 ## Caching: `ETag` & `if-none-match`
 
-Our servers only rely on content-addressible caching. Your browser caches URLs.
+Our servers only rely on content-addressible caching. Browsers cache URLs.
 
-If a resource changes, better catch up fast, so launches of finalized uploads suffer no propagation delays in CDNs,
-proxies, or browser caches.
+We do not introduce any propagation delays in CDNs, proxies, or browser caches other than through caching headers
+you configure.
 
-But if the browser saw a resource already, no reason to transfer it again.
-
-That's where [`ETag`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) comes in.
-
+But if the browser saw a resource already, no reason to transfer it again. That's where [`ETag`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) comes in.
 We always report one, and return `304 Not Modified` if it appears in the `if-none-match` header received from clients.
 
 ## `www` subdomain
@@ -80,15 +77,28 @@ Unless you launch a site there, we redirect `www` to its parent domain for you.
 
 Name your page `hello.html` and access it at `/hello`. Simple and practical.
 
-## Just enough config: Single Page Apps, custom 404, custom headers
+## Just enough config
 
 `xmit.toml`, which isn't served, offers simple settings. For example:
 
 ```toml
-fallback = "index.html" # Single Page Apps
+fallback = "index.html" # for Single Page Apps
 404 = "404.html" # for custom 404 pages (none in SPAs)
 
-[headers]
-access-control-allow-origin = "*" # add a CORS header
-referrer-policy = "" # unset "referrer-policy"
+[[headers]] # add a CORS header
+name = "access-control-allow-origin"
+value = "*"
+
+[[headers]] # unset "referrer-policy"
+name = "referrer-policy"
+
+[[headers]] # cache assets for a year
+name = "cache-control"
+value = "public, max-age=31536000"
+on = "/assets/.*"
+
+[[redirects]]
+from = "/new/(.*)"
+to = "/$1"
+permanent = true # 301 instead of 307
 ```
