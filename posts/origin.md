@@ -63,8 +63,7 @@ we give it a go on everything, and use the compressed version when requested and
 
 Our servers only rely on content-addressible caching. Browsers cache URLs.
 
-We do not introduce any propagation delays in CDNs, proxies, or browser caches other than through caching headers
-you configure.
+We do not introduce any propagation delays in CDNs, proxies, or browser caches other than through headers you control.
 
 But if the browser saw a resource already, no reason to transfer it again. That's where [`ETag`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) comes in.
 We always report one, and return `304 Not Modified` if it appears in the `if-none-match` header received from clients.
