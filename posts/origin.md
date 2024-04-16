@@ -17,7 +17,7 @@ include [HSTS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-
 We go a bit further,
 with `referrer-policy: no-referrer`, `x-content-type-options: nosniff`, `x-frame-options: SAMEORIGIN` out of the box.
 
-## Admin: 2 clicks to sign in, 1 click to rollback, no delays
+## Admin: 2 clicks to sign up or sign in, everything in real time
 
 We've been there: the latest launch is broken, a rollback is in order.
 
