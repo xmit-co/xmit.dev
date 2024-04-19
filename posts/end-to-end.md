@@ -10,11 +10,11 @@ We'll install the required tools, buy and configure a domain, set up a GitHub re
 
 - A working installation of Node and npm. One might appreciate dedicated managers like [fnm](https://github.com/Schniz/fnm); otherwise, to keep things simple:
 
-    - On Mac, [install `brew`](https://brew.sh/) if you haven't already, then `brew install node`.
+  - On Mac, [install `brew`](https://brew.sh/) if you haven't already, then `brew install node`.
 
-    - On Linux, use your package manager.
+  - On Linux, use your package manager.
 
-    - On Windows, download from [nodejs.org](https://nodejs.org/).
+  - On Windows, download from [nodejs.org](https://nodejs.org/).
 
 2. A code editor like [Visual Studio Code](https://code.visualstudio.com/).
 
@@ -73,7 +73,7 @@ $ git commit -m 'Initial commit'
  create mode 100644 tsconfig.json
  create mode 100644 tsconfig.node.json
  create mode 100644 vite.config.ts
- ```
+```
 
 ## Set up a GitHub repository
 
@@ -195,7 +195,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: "npm"
       - name: Install dependencies
         run: npm ci
       - name: Deploy
