@@ -16,13 +16,13 @@ We'll install the required tools, buy and configure a domain, set up a GitHub re
 
   - On Windows, download from [nodejs.org](https://nodejs.org/).
 
-2. A code editor like [Visual Studio Code](https://code.visualstudio.com/).
+- A code editor like [Visual Studio Code](https://code.visualstudio.com/).
 
-3. A [GitHub account](https://github.com/signup).
+- A [GitHub account](https://github.com/signup).
 
-4. An [xmit account](https://xmit.co/).
+- An [xmit account](https://xmit.co/).
 
-5. A domain purchased from the registrar of your choice. We'll use [namecheap](https://www.namecheap.com/) in this guide as we do whenever viable.
+- A domain purchased from the registrar of your choice. We'll use [namecheap](https://www.namecheap.com/) in this guide as we do whenever viable.
 
 ## Create the project
 
@@ -77,7 +77,7 @@ $ git commit -m 'Initial commit'
 
 ## Set up a GitHub repository
 
-Head to [GitHub's repository creation](https://github.com/new), name your repository `hello`, hit "Create repository". Note that we recommend creating the repository in a team rather than your personal account; you can [create one for free](https://github.com/account/organizations/new).
+Head to [GitHub's repository creation](https://github.com/new), name your repository `hello`, hit "Create repository". Note that we recommend creating the repository in a team rather than your personal account; [create one for free](https://github.com/account/organizations/new).
 
 Then, in the terminal, follow GitHub's instructions to push an existing repository from the command line:
 
@@ -98,7 +98,7 @@ branch 'main' set up to track 'origin/main' by rebasing.
 
 ## Create an xmit team
 
-Having logged into our account on [xmit](https://xmit.co/), we can click `+ new team`; a team `#33: unnamed` appears, which we can `✎ rename` to `demo team`.
+Having logged into our account on [xmit](https://xmit.co/), we click `+ new team`; a team `#33: unnamed` appears, which we `✎ rename` to `demo team`.
 
 ## Buy and configure a domain
 
@@ -126,7 +126,7 @@ We're almost ready! `xmit` needs an API key to deploy. User API keys are better 
 
 We head to the [the admin page](https://xmit.co/admin), where we click `+ create` in the `API keys` section of our user, then `📋 copy` after a `✎ rename` to `laptop`.
 
-To use the key, we run `npm install` then `npx xmit set-key`, where we can paste the key then press `Enter`:
+To use the key, we run `npm install` then `npx xmit set-key`, where we paste the key then press `Enter`:
 
 ```
 $ npm install
@@ -162,7 +162,7 @@ Upload progress: 323/323 (100%)
 2024/04/17 01:04:16 🏃 Uploading 5 missing parts (49037 bytes)…
 Upload progress: 49037/49037 (100%)
 2024/04/17 01:04:17 🏁 Finalizing…
-2024/04/17 01:04:17 🚀 Launch #1 complete!
+2024/04/17 01:04:17 🚀 Launch #1 complete, visible at https://hello.xmit.dev
 ```
 
 and a `#17: hello.xmit.dev` site appears instantly in the `Sites` section of team `#33: demo team`.
@@ -216,7 +216,7 @@ To github.com:xmitdemo/hello.git
  + a9db365...0c48227 main -> main
 ```
 
-On GitHub, in the `Actions` tab, we can click on the workflow run, `deploy` job, `Deploy` step, where we should see a log entry like:
+On GitHub, in the `Actions` tab, we click on the workflow run, `deploy` job, `Deploy` step, where we should see a log entry like:
 
 ```
 2024/04/16 23:22:13 💤 Already latest launch (#1)
@@ -224,7 +224,7 @@ On GitHub, in the `Actions` tab, we can click on the workflow run, `deploy` job,
 
 ## Test continuous delivery
 
-In `src/App.tsx`, we can change `<h1>Vite + React</h1>` to `<h1>Vite + React + xmit</h1>`, run `git commit -am 'Title change'`, and `git push`. After a minute or so, [the change should be live](https://hello.xmit.dev)!
+In `src/App.tsx`, we change `<h1>Vite + React</h1>` to `<h1>Vite + React + xmit</h1>`, run `git commit -am 'Title change'`, and `git push`. After a minute or so, [the change should be live](https://hello.xmit.dev)!
 
 ## SPA routing, caching JS and CSS
 
