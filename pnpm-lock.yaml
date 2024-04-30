@@ -9,8 +9,8 @@ devDependencies:
     specifier: ^2.0.1
     version: 2.0.1
   '@xmit.co/xmit':
-    specifier: 0.2.3-0
-    version: 0.2.3-0
+    specifier: 0.2.8-0
+    version: 0.2.8-0
   prettier:
     specifier: ^3.1.0
     version: 3.1.0
@@ -176,8 +176,8 @@ packages:
     resolution: {integrity: sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==}
     dev: true
 
-  /@xmit.co/xmit@0.2.3-0:
-    resolution: {integrity: sha512-1FxH8InyWwyfkgz0tKjpFLMajAvqsd21QoG4OkSaZlyVoqbUz3nOoe5YGCo7q7Jk3rx4Sbx+QD0QmFtb1mzPgg==}
+  /@xmit.co/xmit@0.2.8-0:
+    resolution: {integrity: sha512-Kpwo15y/lXgJG1oL/JHZ4m4GkvWbS+Snn8zbpu6IGm6LUvhJDTH7oErkdymko7J33vHtXnv4L1cSsXgf7E8QDQ==}
     hasBin: true
     requiresBuild: true
     dependencies:

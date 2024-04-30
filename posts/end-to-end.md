@@ -6,6 +6,8 @@ In this article, we'll get a small web application online from start to finish.
 
 We'll install the required tools, buy and configure a domain, set up a GitHub repository and continuous delivery through GitHub Actions.
 
+If you'd rather avoid purchasing a domain, you can [use a domain ending in .xmit.dev](/posts/vite-quickstart/). Most of this guide still applies.
+
 ## Prerequisites
 
 - A working installation of Node and npm. One might appreciate dedicated managers like [fnm](https://github.com/Schniz/fnm); otherwise, to keep things simple:
@@ -20,9 +22,7 @@ We'll install the required tools, buy and configure a domain, set up a GitHub re
 
 - A [GitHub account](https://github.com/signup).
 
-- An [xmit account](https://xmit.co/).
-
-- A domain purchased from the registrar of your choice. We'll use [namecheap](https://www.namecheap.com/) in this guide as we do whenever viable.
+- A domain purchased through the registrar of your choice. We'll use [namecheap](https://www.namecheap.com/) in this guide as we do whenever viable, and will rely on their name servers too.
 
 ## Create the project
 
@@ -104,7 +104,7 @@ Having logged into our account on [xmit](https://xmit.co/), we click `+ new team
 
 After purchasing a domain, head to [namecheap's domain list](https://ap.www.namecheap.com/domains/list/) and click "Manage" on the domain you want to use, then select `Advanced DNS`.
 
-We provision `hello.xmit.dev`; xmit requires that we also provision `www.hello.xmit.dev`. It would be simpler to use a wildcard DNS record, but that's more invasive and this guide is designed to help you try things first.
+We provision `hello.pcarrier.com`; xmit requires that we also provision `www.hello.pcarrier.com`. It would be simpler to use a wildcard DNS record, but that's more invasive and this guide is designed to help you try things first.
 
 We click `Add new record` twice. In both cases, we pick `CNAME Record` as the type, and `33.xmit.co.` as the target to match our team number; for the first record, we set the host to `hello`, and for the second to `www.hello`.
 
@@ -118,9 +118,9 @@ We add a dependency on `xmit` to our project from the terminal:
 $ npm install @xmit.co/xmit --save-dev
 ```
 
-We open `package.json` in the editor to add a `deploy` script that runs `xmit hello.xmit.dev` after the `build` script:
+We open `package.json` in the editor to add a `deploy` script that runs `xmit hello.pcarrier.com` after the `build` script:
 
-![Visual Studio](/img/code.webp)
+![Visual Studio](/img/xmit_hello_pcarrier_com.webp)
 
 We're almost ready! `xmit` needs an API key to deploy. User API keys are better on development machines, and team API keys in CI/CD.
 
@@ -141,7 +141,7 @@ Now everything should be ready on our machine! Run `npm run deploy` to build the
 $ npm run deploy
 
 > hello@0.0.0 deploy
-> npm run build && xmit hello.xmit.dev
+> npm run build && xmit hello.pcarrier.com
 
 
 > hello@0.0.0 build
@@ -162,10 +162,10 @@ Upload progress: 323/323 (100%)
 2024/04/17 01:04:16 🏃 Uploading 5 missing parts (49037 bytes)…
 Upload progress: 49037/49037 (100%)
 2024/04/17 01:04:17 🏁 Finalizing…
-2024/04/17 01:04:17 🚀 Launch #1 complete, visible at https://hello.xmit.dev
+2024/04/17 01:04:17 🚀 Launch #1 complete, visible at https://hello.pcarrier.com
 ```
 
-and a `#17: hello.xmit.dev` site appears instantly in the `Sites` section of team `#33: demo team`.
+and a `#17: hello.pcarrier.com` site appears instantly in the `Sites` section of team `#33: demo team`.
 
 ## Set up continuous delivery
 
@@ -224,9 +224,9 @@ On GitHub, in the `Actions` tab, we click on the workflow run, `deploy` job, `De
 
 ## Test continuous delivery
 
-In `src/App.tsx`, we change `<h1>Vite + React</h1>` to `<h1>Vite + React + xmit</h1>`, run `git commit -am 'Title change'`, and `git push`. After a minute or so, [the change should be live](https://hello.xmit.dev)!
+In `src/App.tsx`, we change `<h1>Vite + React</h1>` to `<h1>Vite + React + xmit</h1>`, run `git commit -am 'Title change'`, and `git push`. After a minute or so, [the change is live](https://hello.pcarrier.com)!
 
-## SPA routing, caching JS and CSS
+## SPA routing, JS and CSS caching
 
 In `public`, we create `xmit.toml` with:
 
