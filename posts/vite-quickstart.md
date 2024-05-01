@@ -48,9 +48,9 @@ From the terminal, we get into the project, install dependencies, add one on `xm
 ```
 $ cd hello
 $ npm install
-[…]
+…
 $ npm install @xmit.co/xmit --save-dev
-[…]
+…
 ```
 
 ## xmit setup
@@ -64,10 +64,9 @@ We click `+ create` in the `API keys` section of our user, then `📋 copy` it a
 To use it on our laptop, we run `npx xmit set-key`, paste the key then press `Enter`:
 
 ```
-$ npm install
-…
 $ npx xmit set-key
 🔑 Enter your key (no echo):
+$
 ```
 
 ## SPA routing, JS and CSS caching
