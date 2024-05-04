@@ -19,15 +19,8 @@ I already had an organization `#19: perso`, so I went straight to DNS, where I c
 ```
 @ CNAME 19.xmit.co.
 * CNAME 19.xmit.co.
-```
-
-and for `pcarrier.com` which is behind Cloudflare, the additional:
-
-```
 @ TXT "xmit=19"
 ```
-
-needed for xmit's infrastructure to verify ownership as Cloudflare masks those CNAMEs.
 
 Then I launched my >1GB web directory with `xmit pcarrier.com`. That crashed halfway through the upload.
 Implemented chunked uploads in the `xmit` CLI, released it, and finally relaunched with caching rules in `xmit.toml`:
