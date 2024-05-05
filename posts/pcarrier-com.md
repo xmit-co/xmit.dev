@@ -43,7 +43,6 @@ value = "*"
 [[redirects]]
 from = "/.well-known/webfinger"
 to = "https://mastodon.social/.well-known/webfinger?resource=acct%3Apcarrier%40mastodon.social"
-permanent = true
 
 [[redirects]]
 from = "/(.*)"
