@@ -1,5 +1,4 @@
 module.exports = function (cfg) {
-  cfg.addPassthroughCopy({ "favicon.svg": "/favicon.svg" });
   cfg.addPassthroughCopy("img");
   cfg.addFilter(
     "dateDisplay",
