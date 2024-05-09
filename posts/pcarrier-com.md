@@ -36,16 +36,16 @@ For all the other domains, I launched a separate site with `xmit rrier.ca` from 
 
 ```
 [[headers]]
-on = "/.well-known/webfinger"
+on = "^/.well-known/webfinger$"
 name = "access-control-allow-origin"
 value = "*"
 
 [[redirects]]
-from = "/.well-known/webfinger"
+from = "^/.well-known/webfinger$"
 to = "https://mastodon.social/.well-known/webfinger?resource=acct%3Apcarrier%40mastodon.social"
 
 [[redirects]]
-from = "/(.*)"
+from = "^/(.*)"
 to = "https://pcarrier.com/$1"
 permanent = true
 ```

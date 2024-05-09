@@ -102,10 +102,10 @@ name = "referrer-policy"
 [[headers]] # cache assets for a year
 name = "cache-control"
 value = "public, max-age=31536000"
-on = "/assets/.*"
+on = "^/assets/"
 
 [[redirects]]
-from = "/new/(.*)"
+from = "^/new/(.*)"
 to = "/$1"
 permanent = true # 301 instead of 307
 ```
