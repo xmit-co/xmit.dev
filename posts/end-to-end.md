@@ -201,7 +201,7 @@ jobs:
       - name: Deploy
         run: npm run deploy
         env:
-          XMIT_KEY: ${{ secrets.XMIT_KEY }}
+          XMIT_KEY: ${{'{{'}} secrets.XMIT_KEY {{'}}'}}
 ```
 
 From the terminal, we add our changes to the repository (`package.json`, `package-lock.json`, `.github/workflows/deploy.yaml`), commit, and push:
