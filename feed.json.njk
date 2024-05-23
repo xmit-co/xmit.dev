@@ -1,0 +1,22 @@
+---
+permalink: '/feed.json'
+---
+{
+  "title": "xmit dev team's blog",
+  "home_page_url": "https://xmit.dev",
+  "feed_url": "https://xmit.dev/feed.json",
+  "version": "https://jsonfeed.org/version/1.1",
+  "icon": "https://xmit.dev/img/icon.svg",
+  "favicon": "https://xmit.dev/img/icon.svg",
+  "items": [
+    {% for post in collections.post -%}
+      {
+        "id": "https://xmit.dev{{ post.url }}",
+        "url": "https://xmit.dev{{ post.url }}",
+        "title": "{{ post.data.title }}",
+        "date_published": "{{ post.date | rfc3339 }}",
+        "content_html": {{ post.content | stringify }}
+      }{% if not loop.last %},{% endif %}
+    {% endfor -%}
+  ]
+}
