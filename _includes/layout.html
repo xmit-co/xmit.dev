@@ -53,6 +53,11 @@
         padding: 1em;
       }
 
+      main {
+        max-width: 60em;
+        margin: 0 auto;
+      }
+
       header {
         background-color: #000;
       }
@@ -75,7 +80,7 @@
     <header>
       <h1>{{ title | default: "🧑‍🚀 xmit dev team" }}</h1>
     </header>
-    <main>{{ content }}</main>
+    {{ content }}
     <footer>
       <p>
         We make <a href="https://xmit.co">xmit.co</a> and other
