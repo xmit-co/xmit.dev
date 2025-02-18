@@ -1,5 +1,6 @@
 ---
 title: Form to mail, sneak peek at new projects
+date: 2024-10-15
 ---
 
 We have yet to properly document the feature, but you can now create forms that send emails to the address of your choosing. Some details [on Pierre's blog](https://nothing.pcarrier.com/posts/form2mail/).

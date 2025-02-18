@@ -1,5 +1,6 @@
 ---
 title: "Getting a Vite app online, end-to-end"
+date: 2024-04-17
 ---
 
 In this article, we'll get a small web application online from start to finish.

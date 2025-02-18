@@ -1,5 +1,6 @@
 ---
 title: "Migrating pcarrier.com: over a GB, and a zoo of domain redirects"
+date: 2024-05-04
 ---
 
 There really is joy in using one's own software to solve one's own problems. I can't help but share my experience migrating

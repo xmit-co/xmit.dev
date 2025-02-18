@@ -1,5 +1,6 @@
 ---
 title: "Vite quick start"
+date: 2024-04-30
 ---
 
 In this article, we'll get a stock Vite app online through [xmit.co](https://xmit.co/) as quickly as possible.

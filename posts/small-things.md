@@ -1,5 +1,6 @@
 ---
 title: Shipping small things (0pw.me, 1pw.me, found.as)
+date: 2024-05-17
 ---
 
 As the design for [signali.ng](https://signali.ng) awaits reviews, I found myself with a fair bit of time and

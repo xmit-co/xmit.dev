@@ -1,5 +1,6 @@
 ---
 title: The origin story
+date: 2023-11-26
 ---
 
 Host static sites. Sounds trivial, right?

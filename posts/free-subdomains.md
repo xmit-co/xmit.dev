@@ -1,5 +1,6 @@
 ---
 title: Free subdomains for completely free websites
+date: 2024-05-18
 ---
 
 We're now offering free subdomains for completely free websites. In the spirit of the [IndieWeb](https://indieweb.org/),

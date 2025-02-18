@@ -1,5 +1,6 @@
 ---
 title: "Brotli compression"
+date: 2024-04-18
 ---
 
 A quick update to let you know we've enabled Brotli

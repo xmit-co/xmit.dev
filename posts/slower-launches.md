@@ -1,5 +1,6 @@
 ---
 title: "Slower uploads"
+date: 2024-05-23
 ---
 
 A quick update to let you know we now acquire certificates synchronously during uploads.
