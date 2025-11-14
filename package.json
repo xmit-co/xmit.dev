@@ -5,8 +5,8 @@
     "deploy": "npm run build && xmit xmit.dev"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@xmit.co/xmit": "0.3.1-0",
-    "prettier": "^3.1.0"
+    "@11ty/eleventy": "^3",
+    "@xmit.co/xmit": "0.3.5-3",
+    "prettier": "^3"
   }
 }
