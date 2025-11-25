@@ -6,7 +6,7 @@ date: 2024-04-30
 In this article, we'll get a stock Vite app online through [xmit.co](https://xmit.co/) as quickly as possible.
 
 If you'd like to go further (set up your own domain, an npm script, a GitHub repository, continuous delivery through GitHub Actions),
-please refer to our [end-to-end guide for Vite](/posts/end-to-end/).
+please refer to our [end-to-end guide for Vite](/guides/end-to-end/).
 
 ## Prerequisites
 

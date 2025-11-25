@@ -3,6 +3,14 @@ layout: layout.html
 ---
 
 <main>
+  <h2>Guides</h2>
+  <ul>
+    {% for guide in collections.guide reversed %}
+    <li>
+      <a href="{{ guide.url }}">{{ guide.data.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
   <h2>Posts</h2>
   <ul>
     {% for post in collections.post reversed %}
@@ -22,5 +30,6 @@ layout: layout.html
   <h2>Team</h2>
   <ul>
     <li><a href="https://pcarrier.com">Pierre Carrier</a></li>
+    <li>Your name here? Contributions welcome!</li>
   </ul>
 </main>

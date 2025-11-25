@@ -7,7 +7,7 @@ In this article, we'll get a small web application online from start to finish.
 
 We'll install the required tools, buy and configure a domain, set up a GitHub repository and continuous delivery through GitHub Actions.
 
-If you'd rather avoid purchasing a domain, you can [use a domain ending in .xmit.dev](/posts/vite-quickstart/). Most of this guide still applies.
+If you'd rather avoid purchasing a domain, you can [use a domain ending in .xmit.dev](/guides/vite-quickstart/). Most of this guide still applies.
 
 ## Prerequisites
 
