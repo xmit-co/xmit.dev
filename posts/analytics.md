@@ -15,20 +15,12 @@ For each HTTP request, we record:
 - Site identifier
 - Domain (one site can have multiple domains)
 - Path of the request (e.g. `/`, `/style.css`, etc.)
-- User agent (not exposed through the API today, can be used for recategorization of the traffic)
-- Referrer (if available)
-- Type (mobile, tablet, desktop, bot; does a poor job at detecting bots)
+- Type of client (mobile, tablet, desktop, bot; does a poor job at detecting bots)
+- User agent header when available (not exposed to customers today, can prove useful to update type)
+- Referrer header when available
 - HTTP status code
 - Content type of the response
 
 ## How do I try it?
 
 Head to [xmit.co/analytics](https://xmit.co/analytics).
-
-## Is it free?
-
-Currently, 100%.
-
-It will remain available for free in some capacity, but we reserve the right to add paid features and/or limit existing features to paying customers.
-
-More generally, keen to explore paid services under the xmit brand and on top of the platform we're building.
