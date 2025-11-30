@@ -20,6 +20,7 @@ For each HTTP request, we record:
 - Referrer header when available
 - HTTP status code
 - Content type of the response
+- Size of the response in bytes
 
 ## How do I try it?
 
