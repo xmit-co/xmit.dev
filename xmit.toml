@@ -1,0 +1,9 @@
+[[headers]]
+on = "^/.well-known/"
+name = "access-control-allow-origin"
+value = "*"
+
+[[headers]]
+on = "^/.well-known/"
+name = "content-type"
+value = "application/json"
