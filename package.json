@@ -2,7 +2,7 @@
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
-    "deploy": "npm run build && xmit xmit.dev"
+    "deploy": "bun run build && xmit xmit.dev"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3",
