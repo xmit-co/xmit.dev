@@ -2,5 +2,7 @@
 layout: layout.html
 ---
 
-<header>from {{ page.date | dateDisplay }}</header>
-<article>{{ content }}</article>
+<article>
+  <header>{{ page.date | dateDisplay }}</header>
+  {{ content }}
+</article>

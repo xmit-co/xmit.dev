@@ -11,70 +11,222 @@
     <link rel="alternate" type="application/json" href="/feed.json" />
     <meta name="description" content="xmit dev team's blog" />
     <style>
-      :root,
-      body {
-        color: #ccc;
-        background-image: linear-gradient(#222, #111);
-        min-height: 100svh;
-        font-family: system-ui, sans-serif;
-        margin: 0;
-        padding: 0;
+      :root {
+        --bg: #0d1017;
+        --panel: #141922;
+        --border: #232a36;
+        --text: #c2cad6;
+        --muted: #7c8798;
+        --heading: #f2f5fa;
+        --accent: #ffd24a;
+        --accent-dim: #b9922a;
+        --measure: 49rem;
       }
 
-      pre, code {
-        font-family: ui-monospace, monospace;
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        color: var(--text);
+        background: radial-gradient(1200px 600px at 50% -10%, #1a2130, var(--bg) 60%);
+        background-attachment: fixed;
+        min-height: 100svh;
+        font-family: system-ui, sans-serif;
+        font-size: 17px;
+        line-height: 1.65;
+        margin: 0;
+        padding: 0;
+        font-variant-numeric: tabular-nums;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      pre,
+      code {
+        font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        font-size: 0.9em;
       }
 
       a {
-        color: #ff0;
+        color: var(--accent);
         text-decoration: none;
+        transition: color 0.15s ease;
+      }
+
+      a:hover {
+        color: #fff;
       }
 
       header,
       footer {
         text-align: center;
-        font-style: italic;
+      }
+
+      header {
+        padding: 2.5rem 1rem 2rem;
+        border-bottom: 1px solid var(--border);
+        background: rgba(0, 0, 0, 0.25);
       }
 
       h1 {
         margin: 0;
-        font-size: 200%;
-        font-style: normal;
+        font-size: clamp(1.8rem, 5vw, 2.6rem);
+        letter-spacing: -0.02em;
+        color: var(--heading);
       }
 
-      h1,
-      h2 {
-        color: #fff;
+      h1 a {
+        color: inherit;
       }
 
-      article {
-        max-width: 60em;
-        border-radius: 0.5em;
-        background-color: #050505;
-        margin: 1em auto 1em auto;
-        padding: 1em;
+      h1 a:hover {
+        color: var(--accent);
+      }
+
+      h2,
+      h3 {
+        color: var(--heading);
+        letter-spacing: -0.01em;
+        line-height: 1.25;
       }
 
       main {
-        max-width: 60em;
+        max-width: var(--measure);
         margin: 0 auto;
+        padding: 2.5rem 1.25rem;
       }
 
-      header {
-        background-color: #000;
+      main h2 {
+        margin: 2em 0 0.6em;
+        padding-bottom: 0.35em;
+        border-bottom: 1px solid var(--border);
+        font-size: 1.05rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
       }
 
-      footer {
-        margin-top: 1em;
-        border-top: 1px solid #000;
+      main h2:first-child {
+        margin-top: 0;
+      }
+
+      main ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      main > ul li {
+        padding: 0.5em 0;
+        border-bottom: 1px solid transparent;
+      }
+
+      article {
+        max-width: var(--measure);
+        border: 1px solid var(--border);
+        border-radius: 0.75em;
+        background-color: var(--panel);
+        margin: 1.5rem auto;
+        padding: clamp(1.25rem, 4vw, 2.5rem);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset,
+          0 20px 40px -24px rgba(0, 0, 0, 0.7);
+      }
+
+      article > :first-child {
+        margin-top: 0;
+      }
+
+      article > :last-child {
+        margin-bottom: 0;
+      }
+
+      article h2 {
+        margin: 1.8em 0 0.5em;
+        font-size: 1.4rem;
+      }
+
+      article h3 {
+        margin: 1.5em 0 0.4em;
+        font-size: 1.15rem;
+      }
+
+      article ul,
+      article ol {
+        padding-left: 1.3em;
+      }
+
+      article li:not(:last-child) {
+        margin-bottom: 0.4em;
+      }
+
+      article img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 0.5em;
+      }
+
+      blockquote {
+        margin: 1.2em 0;
+        padding: 0.2em 1.1em;
+        border-left: 3px solid var(--accent-dim);
+        color: var(--muted);
+      }
+
+      code {
+        background: rgba(255, 255, 255, 0.06);
+        padding: 0.15em 0.4em;
+        border-radius: 0.35em;
       }
 
       pre {
-        white-space: pre-wrap;
+        background: #0a0d13;
+        border: 1px solid var(--border);
+        border-radius: 0.6em;
+        padding: 1em 1.1em;
+        overflow-x: auto;
+        white-space: pre;
+        line-height: 1.5;
       }
 
-      li:not(:last-child) {
-        margin-bottom: 1em;
+      pre code {
+        background: none;
+        padding: 0;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 2em 0;
+      }
+
+      article header {
+        text-align: left;
+        padding: 0;
+        border: none;
+        background: none;
+        margin-bottom: 1.5rem;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+      }
+
+      footer {
+        max-width: var(--measure);
+        margin: 3rem auto 0;
+        padding: 0 1.25rem 2.5rem;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      footer p {
+        margin: 0;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border);
       }
     </style>
   </head>
